@@ -47,6 +47,19 @@ The proposed system for visual cryptography and fingerprint authentication invol
 
 By incorporating visual cryptography, LSB watermarking, and XOR operations, this system provides a robust approach to fingerprint authentication that enhances security and minimizes computational power requirements. The combination of encryption, decryption, and validation techniques ensures that even if the database is compromised, the original fingerprint cannot be decoded. Additionally, the use of lightweight fingerprint scanners becomes feasible due to the efficient decryption process and threshold-based validation.
 
+## Cryptanalysis
+### LSB Watermarking
+LSB watermarking provides steganographic security by concealing the encrypted information (VCS share 2) within an innocent cover image (face image). However, it does not offer cryptographic security. For an attacker, the challenge lies in determining which layer of the cover image has been used for LSB watermarking. They would need to attempt extracting the share from all three layers and then decrypt them. It is impossible to discern the actual share from the extracted matrices of zeros and ones, as the share itself appears as random noise. In our implementation, we have utilized the least significant bit (LSB) for watermarking, as it simplifies the extraction process and yields high fidelity with a low peak signal-to-noise ratio (PSNR).
+
+### VCS
+Visual Cryptography Scheme (VCS) provides information-theoretic security by employing a visual form of secret sharing. Possessing less than two shares is equivalent to having no shares at all, as the information about one share cannot be derived from the other. Hence, an attacker is left with the daunting task of guessing all possible combinations to obtain the missing share. In our case, the attacker would need to correctly guess one share out of the $2^{300x600}$ possible shares.
+
+Considering that each pixel in the share can be either black or white, there are two possible values for each pixel. Therefore, the attacker needs to guess correctly for all $300 x 600$ pixels, accounting for the expansion in dimensions caused by share generation (twice the original width). When the attacker intercepts the face image during transmission, they must first identify which of the three layers contains the share and then accurately guess the other share.
+
+Furthermore, the attacker would need to determine if a row has been flipped or not. With two possible choices for each row and a total of 600 rows, we have a staggering $3 \times 2^{600} \times 2^{300 \times 600}$ potential options available to the attacker. They must successfully obtain the first share from the cover image, deduce which rows have been flipped, and subsequently determine the other share.
+
+This extensive number of possibilities demonstrates the strength of VCS in protecting the confidentiality of the shares and making it computationally infeasible for an attacker to retrieve the original fingerprint from the intercepted image.
+
 ## Conclusion
 
 Visual cryptography and LSB watermarking techniques offer a promising solution for enhancing the security and encryption of fingerprints in biometric authentication systems. By combining these techniques, the proposed system provides robust protection for stored fingerprint data and minimizes the risks associated with database compromises.
