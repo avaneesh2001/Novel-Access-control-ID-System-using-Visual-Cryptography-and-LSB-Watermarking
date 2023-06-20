@@ -69,7 +69,7 @@ The proposed system can be divided into two main stages: Enrollment and Authenti
    - The employee's photograph, along with other information such as name, employee ID, department, etc., is stored on the employee's company-issued smartphone.
    - The smartphone functions as a key card, which can be scanned on an RFID/NFC scanner.
    - Upon scanning, the smartphone transmits the stored employee data to the scanner.
-![Fingerprint Encryption](Images\Enrollment.png)
+![Fingerprint Encryption](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Enrollment.png)
 
 ### Authentication Stage:
 
