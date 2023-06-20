@@ -4,11 +4,11 @@
 1. [Abstract](#Abstract)
 2. [Motivation](#Motivation)
 3. [System Implementation](#System-Implementation)
-4. [System Design Description](System-Design-Description)
-5. [Cryptanalysis](Cryptanalysis)
-6. [Conclusion](Conclusion)
-7. [Limitation of the System](Limitation-of-the-System)
-8. [References](References)
+4. [System Design Description](#system-design-description)
+5. [Cryptanalysis](#cryptanalysis)
+6. [Conclusion](#conclusion)
+7. [Limitation of the System](#limitation-of-the-system)
+8. [References](#references)
 
 
 ## Abstract
