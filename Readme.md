@@ -47,6 +47,50 @@ The proposed system for visual cryptography and fingerprint authentication invol
 
 By incorporating visual cryptography, LSB watermarking, and XOR operations, this system provides a robust approach to fingerprint authentication that enhances security and minimizes computational power requirements. The combination of encryption, decryption, and validation techniques ensures that even if the database is compromised, the original fingerprint cannot be decoded. Additionally, the use of lightweight fingerprint scanners becomes feasible due to the efficient decryption process and threshold-based validation.
 
+## System Design Description
+
+The proposed system can be divided into two main stages: Enrollment and Authentication. Here is a breakdown of the system's design and functionality in each stage:
+
+### Enrollment Stage:
+
+1. **Fingerprint Encryption:**
+   - Fingerprints are obtained from employees and converted into binary data.
+   - The binary data is encrypted using Visual Cryptography Scheme (VCS).
+   - VCS generates two shares from the encrypted binary data.
+   - One share is stored in the company database, while the other share is embedded into an employee's photograph using LSB watermarking.
+
+2. **LSB Watermarking:**
+   - Two types of LSB watermarking techniques are employed: normal LSB and flipped LSB.
+   - In the combined method, a row of the secret image (share) may or may not be flipped with a probability of 0.5.
+   - The employee ID serves as the seed for a random number generator, which determines whether the rows of the secret image are flipped.
+   - The photograph used is an RGB image, and the selection of which layer to perform LSB watermarking depends on the employee ID reduced modulo 3 (0 for Red, 1 for Green, 2 for Blue).
+
+3. **Employee Information Storage:**
+   - The employee's photograph, along with other information such as name, employee ID, department, etc., is stored on the employee's company-issued smartphone.
+   - The smartphone functions as a key card, which can be scanned on an RFID/NFC scanner.
+   - Upon scanning, the smartphone transmits the stored employee data to the scanner.
+   
+### Authentication Stage:
+
+1. **Smartphone Authentication:**
+   - The employee's smartphone is scanned on an RFID/NFC scanner.
+   - The scanner retrieves the employee data stored on the smartphone, including the employee ID.
+
+2. **Fingerprint Retrieval:**
+   - The scanner pulls the fingerprint share corresponding to the employee ID stored in the company database.
+   - The modulo 3 reduction of the employee ID determines the layer from which the image LSB watermarking was performed.
+   - The specified layer is extracted from the image, and an extraction algorithm is used to extract the second share embedded within the picture.
+
+3. **Decryption and Validation:**
+   - Both shares (retrieved and extracted) are decrypted using XOR operations.
+   - The decrypted result is compared to the actual fingerprint inputted by the employee.
+   - Authentication is validated by measuring the number of pixel/bit mismatches between the decrypted image matrix and the scanned fingerprint matrix.
+   - If the mismatch is below a certain threshold (e.g., 10%), the fingerprints are considered a match, and the user is authenticated.
+
+The system design described above consists of two main stages: Enrollment and Authentication. During the Enrollment stage, fingerprint encryption and LSB watermarking techniques are applied to store the employee's encrypted fingerprint share in the company database and embed the other share into the employee's photograph. In the Authentication stage, the employee's smartphone is used for initial authentication, followed by the retrieval of the corresponding fingerprint share. Decryption and validation processes are then performed to authenticate the employee by comparing the decrypted fingerprint share with the actual fingerprint inputted during the authentication process.
+
+This system design ensures secure and reliable employee authentication while incorporating biometric data encryption, image watermarking, and smartphone-based access control.
+
 ## Cryptanalysis
 ### LSB Watermarking
 LSB watermarking provides steganographic security by concealing the encrypted information (VCS share 2) within an innocent cover image (face image). However, it does not offer cryptographic security. For an attacker, the challenge lies in determining which layer of the cover image has been used for LSB watermarking. They would need to attempt extracting the share from all three layers and then decrypt them. It is impossible to discern the actual share from the extracted matrices of zeros and ones, as the share itself appears as random noise. In our implementation, we have utilized the least significant bit (LSB) for watermarking, as it simplifies the extraction process and yields high fidelity with a low peak signal-to-noise ratio (PSNR).
