@@ -69,7 +69,7 @@ The proposed system can be divided into two main stages: Enrollment and Authenti
    - The employee's photograph, along with other information such as name, employee ID, department, etc., is stored on the employee's company-issued smartphone.
    - The smartphone functions as a key card, which can be scanned on an RFID/NFC scanner.
    - Upon scanning, the smartphone transmits the stored employee data to the scanner.
-![Fingerprint Encryption](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Enrollment.png)
+![Fingerprint Enrollment](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Enrollment.png)
 
 ### Authentication Stage:
 
@@ -87,10 +87,14 @@ The proposed system can be divided into two main stages: Enrollment and Authenti
    - The decrypted result is compared to the actual fingerprint inputted by the employee.
    - Authentication is validated by measuring the number of pixel/bit mismatches between the decrypted image matrix and the scanned fingerprint matrix.
    - If the mismatch is below a certain threshold (e.g., 10%), the fingerprints are considered a match, and the user is authenticated.
-![Fingerprint Encryption](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Authentication.png)
+![Fingerprint Authentication](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Authentication.png)
 The system design described above consists of two main stages: Enrollment and Authentication. During the Enrollment stage, fingerprint encryption and LSB watermarking techniques are applied to store the employee's encrypted fingerprint share in the company database and embed the other share into the employee's photograph. In the Authentication stage, the employee's smartphone is used for initial authentication, followed by the retrieval of the corresponding fingerprint share. Decryption and validation processes are then performed to authenticate the employee by comparing the decrypted fingerprint share with the actual fingerprint inputted during the authentication process.
 
 This system design ensures secure and reliable employee authentication while incorporating biometric data encryption, image watermarking, and smartphone-based access control.
+
+## Results
+![Encryption](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Encryption.png)
+![Decryption](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Decryption.png)
 
 ## Cryptanalysis
 ### LSB Watermarking
@@ -103,6 +107,8 @@ Considering that each pixel in the share can be either black or white, there are
 
 Furthermore, the attacker would need to determine if a row has been flipped or not. With two possible choices for each row and a total of 600 rows, we have a staggering $3 \times 2^{600} \times 2^{300 \times 600}$ potential options available to the attacker. They must successfully obtain the first share from the cover image, deduce which rows have been flipped, and subsequently determine the other share.
 
+![Probabilistic Nature](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Prob%20nature.png)
+
 This extensive number of possibilities demonstrates the strength of VCS in protecting the confidentiality of the shares and making it computationally infeasible for an attacker to retrieve the original fingerprint from the intercepted image.
 
 ## Conclusion
@@ -114,3 +120,17 @@ The system addresses the challenges of secure fingerprint authentication in conf
 The proposed system also considers the computational limitations of lightweight fingerprint scanners by using efficient decryption algorithms and threshold-based validation techniques. This ensures that the fingerprint authentication process remains practical and feasible on such devices.
 
 Overall, this study contributes to the development of biometric privacy mechanisms, safeguarding sensitive information and ensuring secure access to confidential areas. Future research can explore further improvements and optimizations in visual cryptography and watermarking techniques to enhance the overall security and efficiency of fingerprint authentication systems.
+
+## Limitation of the System
+
+One limitation of the proposed system is that it takes more time compared to a simple VCS-LSB watermarking system. While the additional security measures implemented in the system provide enhanced protection, they also introduce additional computational steps and image processing operations, leading to increased processing time. 
+
+The combination of fingerprint encryption, LSB watermarking with flipping, and the involvement of multiple color layers in the image processing contribute to the time-consuming nature of the system. The flipping of rows in the secret image, based on a random number generator and the employee ID, adds complexity to the process, further extending the processing time.
+
+Moreover, the decryption and validation steps involved in the authentication stage, including the comparison of pixel/bit mismatches, can also increase the overall authentication time.
+![Time Taken](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Time%20taken.png)
+
+As a result, the system's performance in terms of speed and real-time processing may be affected, particularly in scenarios where a large number of employees need to be enrolled and authenticated simultaneously.
+
+It's important to strike a balance between security and efficiency when designing such systems, considering the specific requirements and constraints of the intended application.
+
