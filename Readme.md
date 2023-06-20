@@ -1,9 +1,9 @@
 # Visual Cryptography for Biometric Privacy
 ## Table of Contents
 
-1. [Abstract](#section-1)
-2. [Motivation](#section-2)
-3. [Section 3](#section-3)
+1. [Abstract](#Abstract)
+2. [Motivation](#Motivation)
+3. [System Implementation](#System-Implementation)
 
 
 ## Abstract
