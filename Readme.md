@@ -87,7 +87,7 @@ The proposed system can be divided into two main stages: Enrollment and Authenti
    - The decrypted result is compared to the actual fingerprint inputted by the employee.
    - Authentication is validated by measuring the number of pixel/bit mismatches between the decrypted image matrix and the scanned fingerprint matrix.
    - If the mismatch is below a certain threshold (e.g., 10%), the fingerprints are considered a match, and the user is authenticated.
-
+![Fingerprint Encryption](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Images/Authentication.png)
 The system design described above consists of two main stages: Enrollment and Authentication. During the Enrollment stage, fingerprint encryption and LSB watermarking techniques are applied to store the employee's encrypted fingerprint share in the company database and embed the other share into the employee's photograph. In the Authentication stage, the employee's smartphone is used for initial authentication, followed by the retrieval of the corresponding fingerprint share. Decryption and validation processes are then performed to authenticate the employee by comparing the decrypted fingerprint share with the actual fingerprint inputted during the authentication process.
 
 This system design ensures secure and reliable employee authentication while incorporating biometric data encryption, image watermarking, and smartphone-based access control.
