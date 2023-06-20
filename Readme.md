@@ -1,4 +1,10 @@
 # Visual Cryptography for Biometric Privacy
+## Table of Contents
+
+1. [Abstract](#section-1)
+2. [Motivation](#section-2)
+3. [Section 3](#section-3)
+
 
 ## Abstract
 
@@ -134,3 +140,17 @@ As a result, the system's performance in terms of speed and real-time processing
 
 It's important to strike a balance between security and efficiency when designing such systems, considering the specific requirements and constraints of the intended application.
 
+## References
+[1] M. Naor and A. Shamir, "Visual cryptography," in Workshop on the Theory and Application of Cryptographic Techniques, pp. 1–12, Springer, 1994.
+
+[2] Y. Liang, H. V. Poor, S. Shamai, et al., "Information theoretic security," Foundations and Trends® in Communications and Information Theory, vol. 5, no. 4–5, pp. 355–580, 2009.
+
+[3] A. Ross and A. Othman, "Visual cryptography for biometric privacy," IEEE transactions on information forensics and security, vol. 6, no. 1, pp. 70–81, 2010.
+
+[4] M. Suganya and K. Krishnakumari, "A novel retina based biometric privacy using visual cryptography," International Journal of Computer Science and Network Security (IJCSNS), vol. 16, no. 9, p. 76, 2016.
+
+[5] A. Mohanarathinam, S. Kamalraj, G. Prasanna Venkatesan, R. V. Ravi, and C. Manikandababu, "Digital watermarking techniques for image security: a review," Journal of Ambient Intelligence and Humanized Computing, vol. 11, no. 8, pp. 3221–3229, 2020.
+
+[6] M. G. Almutiri and M. T. B. Othman, "Digital image watermarking based on LSB techniques: A comparative study," International Journal of Computer Applications, vol. 975, p. 8887.
+
+[7] K. Anusree and G. Binu, "Biometric privacy using visual cryptography, halftoning and watermarking for multiple secrets," in 2014 IEEE National Conference on Communication, Signal Processing and Networking (NCCSN), pp. 1–5, IEEE, 2014.
