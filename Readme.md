@@ -4,6 +4,13 @@
 1. [Abstract](#Abstract)
 2. [Motivation](#Motivation)
 3. [System Implementation](#System-Implementation)
+4. [System Design Description](System-Design-Description)
+    4.1 [Enrollment Stage](Enrollment-Stage)
+    4.2 [Authentication Stage](Authentication-Stage)
+5. [Cryptanalysis](Cryptanalysis)
+6. [Conclusion](Conclusion)
+7. [Limitation of the System](Limitation-of-the-System)
+8. [References](References)
 
 
 ## Abstract
