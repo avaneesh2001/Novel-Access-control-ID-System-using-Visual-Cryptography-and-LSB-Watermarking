@@ -1,4 +1,7 @@
 # Visual Cryptography for Biometric Privacy
+[Open Slides](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Cryptography_slides.pdf)
+[Open Document](https://github.com/avaneesh2001/Novel-Access-control-ID-System-using-Visual-Cryptography-and-LSB-Watermarking/blob/main/Cryptography_Report.pdf)
+
 ## Table of Contents
 
 1. [Abstract](#Abstract)
